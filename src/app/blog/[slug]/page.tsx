@@ -28,8 +28,12 @@ const getData = async (slug: string) => {
     return data[0];
 
 }
-
-const Slug = async ({params}: Params) => {
+interface Props {
+    params: {
+        slug: string;
+    }
+}
+const Slug = async ({params}: Props) => {
     
     const post: Post = await getData(params.slug);
     if (!post) {
