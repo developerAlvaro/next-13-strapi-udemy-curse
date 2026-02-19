@@ -10,7 +10,7 @@ const PageCardImage = ({id, post}: Props) => {
     
     return (
         <>
-            <div key={id} className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <Link href={`blog/${post.slug}`}>
                     <img className="rounded-t-lg w-full" src={post.image[0].url} 
                                                     alt={`Image ${post.title}`} 

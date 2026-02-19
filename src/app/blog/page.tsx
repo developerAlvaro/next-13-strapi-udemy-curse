@@ -43,7 +43,7 @@ const Blog = async ({searchParams}: BlogProps) => {
             
             <div className='grid  gap-4'>
                 {data.map((post: Post) => (
-                        <PageCardImage id = {post.id.toString()} post = {post} />
+                        <PageCardImage  key={post.id} id = {post.id.toString()} post = {post} />
                     )
 
                 )}

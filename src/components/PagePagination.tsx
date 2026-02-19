@@ -1,3 +1,4 @@
+import { cn } from '@/helpers/classnames';
 import Link from 'next/link';
 import React from 'react'
 interface PagePaginationProps {
@@ -23,7 +24,7 @@ const PagePagination = ({ pagination }: PagePaginationProps) => {
                     <li>
                         <Link href={
                             page > 1 ? `/blog?page=${page - 1}` : `/blog?page=${page}`
-                        } className={`${classPrevious} ${page === 1 ? "opacity-50 pointer-events-none" : ""}`}>Previous</Link>
+                        } className={cn(classPrevious, {"opacity-50 pointer-events-none": page === 1,})}>Previous</Link>
                     </li>       
                     {
                         Array.from({ length: pageCount }, (_, i) => i + 1).map((pageNumber) => (
@@ -36,7 +37,7 @@ const PagePagination = ({ pagination }: PagePaginationProps) => {
                     <li>
                         <Link href={
                             page < pageCount ? `/blog?page=${page + 1}` : `/blog?page=${page}`
-                        } className={`${classNext} ${page === pageCount ? "opacity-50 pointer-events-none" : ""}`}>Next</Link>
+                        } className={cn(classNext, {"opacity-50 pointer-events-none": page === pageCount,})}>Next</Link>
                     </li>  
                 </ul>
             </nav>
